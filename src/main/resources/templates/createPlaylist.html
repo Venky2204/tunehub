@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Playlist</title>
+<style type="text/css">
+body {
+	font-family: sans-serif;
+}
+
+.logo {
+	height: 50px;
+	font-size: 30px;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 0px teal;
+	display: inline-block;
+}
+
+img {
+	width: 30px;
+	/* border: 2px solid; */
+	filter: drop-shadow(2px 2px 0px teal);
+}
+
+.msg {
+	display: inline-block;
+	font-family: monospace;
+	text-shadow: 1px 1px 15px teal;
+}
+
+.head {
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	text-align: left;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+thead tr {
+	border-bottom: 3px solid teal;
+	height: 80px;
+	background-color: rgba(0, 128, 128, 0.5);/*rgba(255, 165, 0, 0.5)for orange */
+	font-weight: 900;
+}
+
+tbody tr {
+	border-bottom: 1px solid teal;
+	height: 80px;
+	box-shadow: 0px 5px 10px teal;
+	font-weight: 700;
+}
+
+th {
+	padding: 15px;
+	width: 15%;
+	font-weight: 700;
+}
+
+td {
+	padding: 15px;
+}
+td:last-of-type{
+	text-align: center;;
+}
+th:last-of-type{
+	text-align: center;
+}
+.audiofile {
+	background-color: #f0f0f0;
+	border: 1px solid black;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px teal;
+}
+.heading{
+	color: teal;
+	-webkit-text-stroke:1px black;
+}
+.pN{
+	font-weight: bold;
+	font-size: large;
+}
+
+input[type="text"]{
+	width: 20%;
+	height:30px;
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: medium;
+}
+input[type="submit"]{
+	width: 15%;
+	height:50px;
+	border-radius: 10px;
+	margin: 20px auto;
+	padding: 5px;
+	font-weight: bold;
+	font-size: medium;
+	color: white;
+	background-color: black;
+	border: 1px solid teal;
+}
+input[type="submit"]:hover{
+	background-color: teal;
+}
+input[type="checkbox"]{
+	width: 30px;
+	height: 30px;
+}
+
+</style>
+</head>
+<body>
+	<form action="addPlaylist" method="post">
+		<div class="head">
+			<div class="logo">
+				<span class="tune"><img alt="" src="/images/logo.png"><span
+					class="symbol">unehub</span></span>
+			</div>
+			<div class="msg">Play and dive in to the music world!</div>
+		</div>
+		<hr>
+		
+		<div class="head">
+			<h1 class="heading">Create a PlayList</h1>
+			<label class="pN">Playlist Name:</label> <br> <input type="text" name="name">
+		</div>
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Song</th>
+					<th>Select songs</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="song:${songs}">
+
+					<td th:text="${song.name}"></td>
+					<td><audio controls class="audiofile">
+							<source th:src="${song.link}" type="audio/mpeg">
+							<!-- Your browser does not support the audio element -->
+						</audio></td>
+					<td><input type="checkbox" th:name="songs"
+						th:value="${song.id}"></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<div class="head">
+			<input type="submit" value="ADD PLAYLIST">
+		</div>
+		
+	</form>
+</body>
+</html>

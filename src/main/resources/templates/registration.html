@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<style type="text/css">
+	*{
+		font-family: sans-serif;
+	}
+	body{
+		background-color: black;
+	}
+	form{
+		padding: 15px;
+	}
+	.container{
+		/* position: absolute;
+		top: 8%;
+		left: 35%; */
+		margin:2% auto;
+		width: 30%;
+		color: white;
+	}
+	fieldset{
+		border: 2px solid orange;
+		border-radius: 15px;
+		box-shadow: 2px 2px 5px orange;
+	}
+	legend{
+		text-align: center;
+		background-color: black;
+		color: orange;
+	}
+	input{
+		width: 95%;
+		height:30px;
+		margin: 5px 0 10px;
+		font-weight: bold;
+	}
+	textarea{
+		width: 95%;
+		margin: 5px 0 0;
+		font-weight: bold;
+	}
+	input[type="radio"]{
+		width: 5%;	
+		margin: 0 10px;
+		height: 15px;
+	}
+	input[type="radio"]:checked{
+		accent-color:orange;
+	}
+	input[type="submit"]{
+		width: 30%;
+		margin-left: 32%;
+	}
+	p{
+		margin: 0 0 2px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+	<fieldset>
+	<legend style="font-size: 40px"><b>Register Form</b></legend>
+	<form action="register" method="post" >
+		<label for="username">Username: </label><input type="text" name="username" placeholder="Enter Username">
+		<br><br>
+		<label for="email">Email: </label><input type="email" name="email" placeholder="Enter your Email address">
+		<br><br>
+		<label for="password">Password: </label><input type="password" name="password" placeholder="Enter Password"> 
+		<br><br>
+		<label for="gender">Gender: </label> 
+			<input type="radio" name="gender" value="m">Male
+			<input type="radio" name="gender" value="f">Female
+			<input type="radio" name="gender" value="o">Other
+		<br><br>
+		<label for="role">Role: </label> 
+			<input type="radio" name="role" value="admin">Admin
+			<input type="radio" name="role" value="customer">Customer
+		<br><br>
+		<label for="username">Address: </label>
+		<textarea name="address" rows="3" cols="30" placeholder="Enter your Address"></textarea>
+		<br><br>
+		<p th:text="${msg}" style="color:orange;text-align: center;"></p>
+		<input type="submit">
+	</form>
+	</fieldset>
+	</div>
+</body>
+</html>

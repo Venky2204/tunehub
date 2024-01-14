@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Home</title>
+<style type="text/css">
+	body{
+		background: white;
+	}
+	
+	.block{
+		text-align: center;
+		justify-content: center;
+		position: absolute;
+		top: 20%;
+		left: 28%;
+	}
+	img{
+		width: 150px;
+		/* border: 2px solid; */
+		filter: drop-shadow(5px 5px 0px orange);
+	}
+	.logo{
+		font-size: 150px;	
+		font-family: sans-serif;
+		text-shadow: 3px 3px 0px orange;
+		color: back;
+	}
+	.block hr:nth-child(2){
+		height: 3px;
+		background-color: black;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+		margin: 10px;
+		font-weight: bold;
+	}
+	.anchors{
+		margin-top: 10px;
+	}
+	.msg{
+		margin: 20px;
+		font-family: sans-serif;
+		position: absolute;
+		text-align: center;
+		color: black;
+		font-size: 20px;
+		display: block;
+	}
+	.msgbody{
+		margin-bottom: 5px;
+	}
+</style>
+
+</head>
+<body>
+<div class="block">
+		<div class="logo"><span class = "tune"><img alt="" src="/images/logo.png"><span class="symbol">unehub</span></span></div>
+<!--<h1 style="font-family: sans-serif; border: 1px solid black;width: 10.5%; padding: 5px; color:white;background-color: black;border-radius: 10px"><span>Tune </span><span style="color:black;background-color: #f78104;border-radius: 3px">hub</span></h1> 
+ -->	<hr>
+ 		<div class="msg">
+ 			<div class="msgbody">Dear Admin !</div>
+ 			<div class="anchors">
+ 				<a href="newSong">Click here to Add a New Song</a>|
+ 				<a href="viewSongs">Click here to View all Songs</a>
+ 				<hr>
+ 				<a href="createPlaylist">Click here to Create PlayList</a>|
+ 				<a href="viewPlaylists">Click here to view all Playlists</a>
+ 				</div>
+ 		</div>
+</div>
+</body>
+</html>

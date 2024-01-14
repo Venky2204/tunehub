@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Play a Songs</title>
+<style type="text/css">
+	body{
+		font-family: sans-serif;
+	}
+	
+	.logo{
+		height:50px;
+		font-size: 30px;	
+		font-family: sans-serif;
+		text-shadow: 1px 1px 0px orange;
+		display: inline-block;
+	}
+	
+	img{
+		width:30px;
+		/* border: 2px solid; */
+		filter: drop-shadow(2px 2px 0px orange);
+	}
+	.msg{
+		display: inline-block;
+		font-family: monospace;
+		text-shadow: 1px 1px 15px orange;
+	}
+	.head{
+		text-align: center;
+	}
+	iframe {
+		height: 50px;
+		width: 1000px;
+	}
+	table{
+		width: 100%;
+		text-align: left;
+		margin:0 auto;
+		border-collapse: collapse;
+		font-weight: 900;
+	}
+	thead tr{
+		border-bottom: 3px solid orange;
+		height: 80px;
+		background-color: rgba(255,165,0,0.5);
+	}
+	tbody tr{
+		border-bottom: 1px solid orange;
+		height: 80px;
+		box-shadow: 0px 5px 10px orange;
+	}
+	th{
+		padding: 15px;
+		width:15%;
+		font-weight: 700;
+	}
+	td{
+		padding: 15px;
+	}
+	.audiofile{
+		background-color: #f0f0f0;
+		border: 1px solid black;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 2px 2px 5px orange;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="head">
+	<div class="logo"><span class = "tune"><img alt="" src="/images/logo.png"><span class="symbol">unehub</span></span></div>
+	<div class="msg">Play and dive in to the music world!</div>
+	</div>
+	<hr>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th>Play</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="song:${songs}">
+				<td th:text="${song.name}">		</td>
+				<td th:text="${song.artist}">		</td>
+				<td th:text="${song.genre}">		</td>
+				<td>
+					<audio controls class="audiofile">
+						<source th:src="${song.link}" type="audio/mpeg">
+						Your browser does not support the audio element
+					</audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

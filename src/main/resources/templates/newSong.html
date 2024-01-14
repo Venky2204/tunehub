@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a new Song</title>
+<style type="text/css">
+*{
+		font-family: sans-serif;
+	}
+	body{
+		background-color: black;
+		color: white;
+	}
+	.container{
+		/* position: absolute;
+		top: 8%;
+		left: 35%; */
+		margin:5% auto;
+		width: 30%;
+		color: white;
+	}
+	fieldset{
+		border: 2px solid orange;
+		border-radius: 15px;
+		box-shadow: 2px 2px 5px orange;
+	}
+	form{
+		padding: 15px;
+	}
+	legend{
+		text-align: center;
+		background-color: black;
+		color: orange;
+	}
+	input{
+		width: 95%;
+		height:30px;
+		margin: 5px 0 10px;
+		font-weight: bold;
+	}
+	textarea{
+		width: 95%;
+		margin: 5px 0 0;
+		font-weight: bold;
+	}
+	input[type="submit"]{
+		width: 30%;
+		margin-left: 32%;
+	}
+	p{
+		margin: 0 0 2px;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<fieldset>
+		<legend style="font-size: 40px"><b>Add a new song</b></legend>
+	<form action="addSong" method="post">
+		<label>Song Name:</label>
+		<input type="text" name="name">
+		<br><br>
+		<label>Song Artist:</label>
+		<input type="text" name="artist">
+		<br><br>
+		<label>Song Genre:</label>
+		<input type="text" name="genre">
+		<br><br>
+		<label>Song Link:</label>
+		<input type="text" name="link">
+		<br>
+		<p th:text="${msg}" style="color:orange;text-align: center;"></p>
+		<br>
+		<input type="submit" value="ADD SONG">
+	</form>
+	</fieldset>
+	</div>
+</body>
+</html>

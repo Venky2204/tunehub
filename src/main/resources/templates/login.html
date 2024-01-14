@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<style type="text/css">
+	*{
+		font-family: sans-serif;
+	}
+	body{
+		background-color: black;
+	}
+	.container{
+		/* position: absolute;
+		top: 30%;
+		left: 35%; */
+		margin:10% auto;
+		width: 30%;
+		color: white;
+	}
+	fieldset{
+		border: 2px solid orange;
+		border-radius: 15px;
+		box-shadow: 2px 2px 5px orange;
+	}
+	legend{
+		text-align: center;
+		background-color: black;
+		color: orange;
+	}
+	input{
+		width: 95%;
+		height:30px;
+		margin: 5px 0 10px;
+		font-weight: bold;
+	}
+	
+	input[type="submit"]{
+		width: 30%;
+		margin-left: 32%;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+	<fieldset>
+	<legend style="font-size: 40px"><b>Login Form</b></legend>
+	<form action="/validate" method="post" style="padding: 15px">
+		<label for="email">Email: </label><input type="email" name="email" placeholder="Enter your email">
+		<label for="password">Password: </label><input type="password" name="password" placeholder="Enter your password">
+		<p th:text="${msg}" style="color:orange;text-align: center;"></p>
+		<input type="submit">
+	</form>
+	</fieldset>
+	</div>
+</body>
+</html>
