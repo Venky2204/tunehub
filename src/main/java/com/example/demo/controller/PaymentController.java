@@ -73,7 +73,7 @@ public class PaymentController {
 
 	@PostMapping("/verify")
 	@ResponseBody
-	public boolean verifyPayment(@RequestParam String orderId, @RequestParam String paymentId) {
+	public boolean verifyPayment(@RequestParam String orderId, @RequestParam String paymentId,@RequestParam String signature) {
 		try {
 			// Initialize Razorpay client with your API key and secret
 			RazorpayClient razorpayClient = new RazorpayClient("rzp_test_ApSFFaGULOxqke", "pGsZB9JNXLqDPWjyg4myC8bK");
@@ -81,7 +81,7 @@ public class PaymentController {
 			String verificationData = orderId + " " + paymentId;
 
 			// use razorpay's utility funtion to verify the signature
-			boolean isValidSignature = Utils.verifySignature(verificationData, orderId,paymentId);
+			boolean isValidSignature = Utils.verifySignature(verificationData, signature,"pGsZB9JNXLqDPWjyg4myC8bK");
 
 			return isValidSignature;
 		} catch (RazorpayException e) {
